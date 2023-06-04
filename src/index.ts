@@ -9,13 +9,6 @@ const host = config.get<string>('host');
 
 const app = express();
 const httpServer = createServer(app);
-// const io = new Server(httpServer, {
-//   cors: {
-//     origin: corsOrigin,
-//     credentials: true,
-//   },
-// }
-// );
 
 const io = new Server(httpServer, {
   cors: {
@@ -24,7 +17,7 @@ const io = new Server(httpServer, {
 });
 
 httpServer.listen(port, host, () => {
-  console.log(`http://${host}:${port}`);
+  console.log(`http://${host}:${port} deploy`);
   socket({ io });
 });
 
